@@ -10,6 +10,8 @@ a_function "0"
 
 a_function "1"
 
+a_function "2"
+
 if [ "a" = "a" ];
 then
     echo "hit"
