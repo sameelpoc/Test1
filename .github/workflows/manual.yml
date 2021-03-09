@@ -32,10 +32,6 @@ jobs:
           COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
           RUN_ID: ${{ github.run_id }}
           PULL_NUMBER: ${{ github.event.pull_request.number }}
-          
-  test:
-    needs: build
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
@@ -45,21 +41,6 @@ jobs:
           ruby-version: '2.7'
       - name: Running Tests
         run: echo 'Running test'
-  report:
-    needs: test 
-    runs-on: ubuntu-latest
-    steps:
-     - uses: actions/checkout@v2
-       with:
-          fetch-depth: 2
-     - uses: actions/upload-artifact@v2
-       with:
-        name: my-artifact
-        path: test.txt
-  jacocd:
-    needs: test 
-    runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
 
@@ -95,3 +76,4 @@ jobs:
       with:
         name: jacoco-report
         path: target/site/jacoco/
+          
