@@ -18,5 +18,9 @@ then
 else
     echo "missed"
 fi
-
+pwd
+ls -ltr
 cp test.txt test2.txt
+
+pwd
+ls -ltr
