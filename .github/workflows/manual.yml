@@ -1,6 +1,9 @@
 name: Test and coverage
 
-on: [push, pull_request]
+on: 
+   pull_request:
+        branches:
+            - 'test/*'
 
 jobs:
   build:
@@ -53,5 +56,3 @@ jobs:
        with:
         name: my-artifact
         path: test.txt
-  
-    
