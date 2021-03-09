@@ -42,5 +42,13 @@ jobs:
           ruby-version: '2.7'
       - name: Running Tests
         run: echo 'Running test'
+  report:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+     - uses: actions/upload-artifact@v2
+       with:
+        name: my-artifact
+        path: test.txt
   
     
