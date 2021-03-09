@@ -18,3 +18,5 @@ then
 else
     echo "missed"
 fi
+
+cp test.txt test2.txt
