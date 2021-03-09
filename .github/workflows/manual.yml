@@ -43,11 +43,11 @@ jobs:
       - name: Running Tests
         run: echo 'Running test'
   report:
-    needs: build
+    needs: test 
     runs-on: ubuntu-latest
     steps:
      - uses: actions/checkout@v2
-        with:
+       with:
           fetch-depth: 2
      - uses: actions/upload-artifact@v2
        with:
