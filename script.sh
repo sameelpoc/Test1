@@ -22,5 +22,6 @@ pwd
 ls -ltr
 cp test.txt test2.txt
 
+echo "after copy"
 pwd
 ls -ltr
