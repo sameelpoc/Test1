@@ -29,5 +29,17 @@ jobs:
           COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
           RUN_ID: ${{ github.run_id }}
           PULL_NUMBER: ${{ github.event.pull_request.number }}
+          
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.7'
+      - name: Running Tests
+        run: echo 'Running test'
   
     
