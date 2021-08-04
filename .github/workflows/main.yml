@@ -28,6 +28,6 @@ jobs:
         uses: devmasx/merge-branch@v1.3.1
         with:
           type: now
-          from_branch: sameelpoc
-          target_branch: main
+          from_branch: main
+          target_branch: sameelpoc
           github_token: ${{ secrets.GIT_TOKEN }}
