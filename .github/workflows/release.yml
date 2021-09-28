@@ -23,3 +23,19 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: sh testrelease.sh
+  QATest:
+     needs : build
+     runs-on: ubuntu-latest
+     steps:
+      - uses: convictional/trigger-workflow-and-wait@v1.3.0
+        with:
+           workflow_file_name: depentent.yml
+           github_token: ${{ secrets.GIT_ACCESS_TOKEN }}
+           owner: sameelpoc
+           repo: Test1
+           ref: main
+           wait_interval: 10
+           inputs: '{}'
+           propagate_failure: true
+           trigger_workflow: true
+           wait_workflow: true    
