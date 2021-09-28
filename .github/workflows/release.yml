@@ -30,7 +30,7 @@ jobs:
       - uses: convictional/trigger-workflow-and-wait@v1.3.0
         with:
            workflow_file_name: depentent.yml
-           github_token: ${{ secrets.GIT_ACCESS_TOKEN }}
+           github_token: ${{ secrets.GIT_TOKEN }}
            owner: sameelpoc
            repo: Test1
            ref: main
