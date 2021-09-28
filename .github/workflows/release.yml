@@ -35,7 +35,7 @@ jobs:
            repo: Test1
            ref: main
            wait_interval: 10
-           inputs: '{}'
+           inputs: '{"commit_message": ${{github.event.head_commit.message}},"commit_id": ${{github.sha}}}'
            propagate_failure: true
            trigger_workflow: true
            wait_workflow: true    
